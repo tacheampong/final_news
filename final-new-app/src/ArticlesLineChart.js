@@ -1,7 +1,7 @@
 import * as d3 from "d3";
 import LineChart from "./LineChart";
 const ArticlesLineChart = ({data}) => {
-  var margin = { top: 20, left: 60, bottom: 20, right: 20 };
+  var margin = { top: 20, left: 80, bottom: 70, right: 20 };
   var width = 500 - margin.left - margin.right;
   var height = 500 - margin.top - margin.bottom;
 
@@ -42,7 +42,7 @@ const ArticlesLineChart = ({data}) => {
 
   return (
     <div>
-    <h2>Articles Line Chart</h2>
+    <h2>Global News Count by Topic Over Time</h2>
     <LineChart aggregated={aggregated} width={width} height={height} margin={margin} line={line} xscale={x} yscale={y} colorscale={colorScale}/>
     </div>
     

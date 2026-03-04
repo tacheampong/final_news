@@ -5,8 +5,20 @@ const LineChart = ({aggregated, width, height, margin, line, xscale, yscale, col
     return (
         <svg
       width={width + margin.left + margin.right}
-      height={height + margin.top + margin.bottom}>
-
+      height={height + margin.top + margin.bottom}
+        >
+          <text
+            transform={`translate(${margin.left + width / 2},${margin.top +height + 50})`}
+            textAnchor="middle"
+          >
+            Date
+          </text>
+          <text
+            transform={`translate(${margin.left - 60},${margin.top + height / 2}) rotate(-90)`}
+            textAnchor="middle"
+          >
+            Count
+          </text>
         {/* Generate the Lines for chart */}
       <g transform={`translate(${margin.left},${margin.top})`}>
             {aggregated.map((item) => (

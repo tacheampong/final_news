@@ -33,7 +33,7 @@ const ArticlesBarChart = ({ data }) => {
     
     return (
         <div>
-            <h2>Institutional News Count by Topic</h2>
+            <h2>Global News Count by Topic</h2>
             <BarChart aggregated={aggregated} width={width} height={height} margin={margin} xscale={xscale} yscale={yscale} colorscale={colorscale}/>
         </div>
     );

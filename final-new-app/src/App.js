@@ -40,17 +40,6 @@ async function getYoutubeData() {
 
   return change_date;
 }
-async function getYoutubeDataBar() {
-  var data = await d3.csv("youtube_topics_summary.csv");
-      var cleaned = data.map(function(d){
-        return{
-            topic: d.topic,
-            video_count: +d.video_count,
-        };
-    });
-
-  return cleaned;
-}
 async function getArticleDataBar() {
     var data = await d3.csv("institutional_news.csv");
     var cleaned = data.map(function(d){
@@ -62,12 +51,23 @@ async function getArticleDataBar() {
 
     return cleaned;
 }
+async function getYoutubeDataBar() {
+  var data = await d3.csv("youtube_topics_summary.csv");
+      var cleaned = data.map(function(d){
+        return{
+            topic: d.topic,
+            video_count: +d.video_count,
+        };
+    });
+
+  return cleaned;
+}
 
 function App() {
   const [articleDataset, setArticleDatset] = useState([])
   const [youtubeDataset, setYoutubeDataset] = useState([])
-  const [youtubeBarDataset, setYoutubeBarDataset] = useState([])
   const [articleBarDataset, setArticleBarDataset] = useState([])
+  const [youtubeBarDataset, setYoutubeBarDataset] = useState([])
   useEffect(() => {
     async function loadData() {
       const articleData = await getArticleData()
@@ -81,14 +81,17 @@ function App() {
     }
     loadData()
   }, [])
-  if (articleDataset.length === 0 || youtubeDataset.length === 0 || youtubeBarDataset.length === 0 || articleBarDataset.length === 0) return <div>Loading...</div>
+  if (articleDataset.length === 0 || youtubeDataset.length === 0 || articleBarDataset.length === 0 || youtubeBarDataset.length === 0) return <div>Loading...</div>
   return (
     <div className="App">
-  
-    <ArticlesLineChart data={articleDataset}/>
-     <YoutubeLineChart data={youtubeDataset}/>
-     <YoutubeBarChart data={youtubeBarDataset}/>
-      <ArticlesBarChart data={articleBarDataset}/>
+      <div className="charts-alignment">
+        <ArticlesLineChart data={articleDataset}/>
+        <YoutubeLineChart data={youtubeDataset}/>
+      </div>
+      <div className="charts-alignment">
+        <ArticlesBarChart data={articleBarDataset}/>
+        <YoutubeBarChart data={youtubeBarDataset}/>
+      </div>
     </div>
   );
 }
