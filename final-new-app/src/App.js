@@ -1,9 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import YoutubeLineChart from './YoutubeLineChart';
+import YoutubeViewsLineChart from './YoutubeViewsLineChart';
 import { useEffect, useState } from 'react';
 import * as d3 from "d3"
 import ArticlesLineChart from './ArticlesLineChart';
+import YoutubeLikesLineChart from './YoutubeLikesLineChart';
+import YotubeCommentsLineChart from './YoutubeCommentsLineChart';
 import ArticlesBarChart from "./ArticlesBarChart";
 import YoutubeBarChart from "./YoutubeBarChart";
 
@@ -86,7 +88,7 @@ function App() {
     <div className="App">
       <div className="charts-alignment">
         <ArticlesLineChart data={articleDataset}/>
-        <YoutubeLineChart data={youtubeDataset}/>
+        <YoutubeViewsLineChart data={youtubeDataset}/>
       </div>
       <div className="charts-alignment">
         <ArticlesBarChart data={articleBarDataset}/>
