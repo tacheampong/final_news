@@ -4,6 +4,8 @@ import YoutubeLineChart from './YoutubeLineChart';
 import { useEffect, useState } from 'react';
 import * as d3 from "d3"
 import ArticlesLineChart from './ArticlesLineChart';
+import ArticlesBarChart from "./ArticlesBarChart";
+import YoutubeBarChart from "./YoutubeBarChart";
 
 async function getArticleData() {
   var data = await d3.csv("institutional_news.csv");
@@ -38,26 +40,55 @@ async function getYoutubeData() {
 
   return change_date;
 }
+async function getYoutubeDataBar() {
+  var data = await d3.csv("youtube_topics_summary.csv");
+      var cleaned = data.map(function(d){
+        return{
+            topic: d.topic,
+            video_count: +d.video_count,
+        };
+    });
 
+  return cleaned;
+}
+async function getArticleDataBar() {
+    var data = await d3.csv("institutional_news.csv");
+    var cleaned = data.map(function(d){
+        return{
+            topic: d.topic,
+            num_articles: +d.num_articles,
+        };
+    });
+
+    return cleaned;
+}
 
 function App() {
   const [articleDataset, setArticleDatset] = useState([])
   const [youtubeDataset, setYoutubeDataset] = useState([])
+  const [youtubeBarDataset, setYoutubeBarDataset] = useState([])
+  const [articleBarDataset, setArticleBarDataset] = useState([])
   useEffect(() => {
     async function loadData() {
       const articleData = await getArticleData()
       const youtubeData = await getYoutubeData()
+      const youtubeBarData = await getYoutubeDataBar()
       setArticleDatset(articleData)
+      setYoutubeBarDataset(youtubeBarData)
       setYoutubeDataset(youtubeData)
+      const articleBarData = await getArticleDataBar()
+      setArticleBarDataset(articleBarData)
     }
     loadData()
   }, [])
-  if (articleDataset.length === 0 || youtubeDataset.length === 0) return <div>Loading...</div>
+  if (articleDataset.length === 0 || youtubeDataset.length === 0 || youtubeBarDataset.length === 0 || articleBarDataset.length === 0) return <div>Loading...</div>
   return (
     <div className="App">
   
     <ArticlesLineChart data={articleDataset}/>
      <YoutubeLineChart data={youtubeDataset}/>
+     <YoutubeBarChart data={youtubeBarDataset}/>
+      <ArticlesBarChart data={articleBarDataset}/>
     </div>
   );
 }
