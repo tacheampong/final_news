@@ -49,7 +49,10 @@ const BarChart = ({aggregated, width, height, margin, xscale, yscale, colorscale
       {/* Y-axis */}
         <g
           ref={(node) =>
-            d3.select(node).call(d3.axisLeft(yscale))
+            d3.select(node).call(d3.axisLeft(yscale),
+            d3.select(node).selectAll(".tick line").clone()
+              .attr("x2", width)
+              .attr("stroke-opacity", 0.1))
           }
         />
       </g>

@@ -48,7 +48,10 @@ const LineChart = ({aggregated, width, height, margin, line, xscale, yscale, col
       {/* Drawing Y-axis labels*/}
         <g
           ref={(node) =>
-            d3.select(node).call(d3.axisLeft(yscale).ticks(10))
+            d3.select(node).call(d3.axisLeft(yscale).ticks(10),
+            d3.select(node).selectAll(".tick line").clone()
+                          .attr("x2", width)
+                          .attr("stroke-opacity", 0.1))
           }
         />
       </g>
