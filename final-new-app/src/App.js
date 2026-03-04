@@ -88,11 +88,16 @@ function App() {
     <div className="App">
       <div className="charts-alignment">
         <ArticlesLineChart data={articleDataset}/>
-        <YoutubeViewsLineChart data={youtubeDataset}/>
       </div>
       <div className="charts-alignment">
         <ArticlesBarChart data={articleBarDataset}/>
         <YoutubeBarChart data={youtubeBarDataset}/>
+      </div>
+      <div className='charts-alignment'>
+        <YotubeCommentsLineChart data={youtubeDataset}/>
+        <YoutubeLikesLineChart data={youtubeDataset}/>
+        <YoutubeViewsLineChart data={youtubeDataset}/>
+
       </div>
     </div>
   );
