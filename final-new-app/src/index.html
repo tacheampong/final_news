@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube News Coverage Breakdown</title>
+    <link rel="stylesheet" href="channels_style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <h2>YouTube News: Topic Distribution</h2>
+        <p class="subtitle">
+            Comparing video counts across major news channels. This scatterplot 
+            visualizes the total video count versus specific topic emphasis 
+            (Conflict, Election, or Immigration).
+        </p>
+    </header>
+
+    <div id="error" class="error-msg">
+        Error: The CSV file could not be loaded. [cite_start]Ensure 'youtube_channels.csv' is in the same folder. [cite: 1]
+    </div>
+
+    <div id="chart"></div>
+    <div id="tooltip" class="tooltip" style="opacity: 0;"></div>
+
+    <script src="channels_script.js"></script>
+</body>
+</html>
