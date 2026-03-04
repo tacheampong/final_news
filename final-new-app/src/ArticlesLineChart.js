@@ -42,10 +42,10 @@ const ArticlesLineChart = ({data}) => {
 
   return (
     <div>
-    <h2>Global News Count by Topic Over Time</h2>
+    <h4>Global News Count by Topic Over Time</h4>
     <LineChart aggregated={aggregated} width={width} height={height} margin={margin} line={line} xscale={x} yscale={y} colorscale={colorScale}/>
     </div>
-    
+
   );
 };
 

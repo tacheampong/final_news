@@ -1,6 +1,6 @@
 import * as d3 from 'd3'
 import LineChart from './LineChart'
-import Legend from './LineChartLegend';
+import Legend from './Legend';
 const YoutubeLikesLineChart = ({data}) => {
   var margin = { top: 20, left: 80, bottom: 70, right: 20 };
    var width = 500 - margin.left - margin.right;

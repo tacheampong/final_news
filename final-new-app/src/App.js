@@ -8,7 +8,7 @@ import YoutubeLikesLineChart from './YoutubeLikesLineChart';
 import YotubeCommentsLineChart from './YoutubeCommentsLineChart';
 import ArticlesBarChart from "./ArticlesBarChart";
 import YoutubeBarChart from "./YoutubeBarChart";
-
+import Legend from './Legend';
 async function getArticleData() {
   var data = await d3.csv("institutional_news.csv");
   var change_date = data.flatMap((d) => [
@@ -64,12 +64,13 @@ async function getYoutubeDataBar() {
 
   return cleaned;
 }
-
+var titles = [{topic:"war/conflict"}, {topic:"election"}, {topic: "immigration"}]
 function App() {
   const [articleDataset, setArticleDatset] = useState([])
   const [youtubeDataset, setYoutubeDataset] = useState([])
   const [articleBarDataset, setArticleBarDataset] = useState([])
   const [youtubeBarDataset, setYoutubeBarDataset] = useState([])
+  const [legendData, setLegendData] = useState([])
   useEffect(() => {
     async function loadData() {
       const articleData = await getArticleData()
@@ -80,23 +81,30 @@ function App() {
       setYoutubeDataset(youtubeData)
       const articleBarData = await getArticleDataBar()
       setArticleBarDataset(articleBarData)
+      setLegendData(titles)
     }
     loadData()
   }, [])
   if (articleDataset.length === 0 || youtubeDataset.length === 0 || articleBarDataset.length === 0 || youtubeBarDataset.length === 0) return <div>Loading...</div>
   return (
     <div className="App">
+      <h1>News Coverage</h1>
       <div className="charts-alignment">
-        <ArticlesLineChart data={articleDataset}/>
+     <Legend aggregated={legendData}/>
       </div>
       <div className="charts-alignment">
         <ArticlesBarChart data={articleBarDataset}/>
         <YoutubeBarChart data={youtubeBarDataset}/>
       </div>
       <div className='charts-alignment'>
+        <div className='line-chart-alignment'>
+        <h2>Line Charts</h2>
+        <ArticlesLineChart data={articleDataset}/>
         <YotubeCommentsLineChart data={youtubeDataset}/>
         <YoutubeLikesLineChart data={youtubeDataset}/>
         <YoutubeViewsLineChart data={youtubeDataset}/>
+        </div>
+
 
       </div>
     </div>
