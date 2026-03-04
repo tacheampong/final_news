@@ -43,7 +43,7 @@ const YotubeCommentsLineChart = ({data}) => {
  
    return (
    <div>
-    <h4>Average Comment Count</h4>
+    <h4>Youtube Average Comment Count by Topic Over Time</h4>
     <div>
     <LineChart aggregated={aggregated} width={width} height={height} margin={margin} line={line} xscale={x} yscale={y} colorscale={colorScale}/>
       

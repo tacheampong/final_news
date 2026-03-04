@@ -43,7 +43,7 @@ const YoutubeViewsLineChart = ({data}) => {
  
    return (
     <div>
-     <h4>Youtube Video Count by Topic Over Time</h4>
+     <h4>Youtube Average Video Count by Topic Over Time</h4>
     <div>
     <LineChart aggregated={aggregated} width={width} height={height} margin={margin} line={line} xscale={x} yscale={y} colorscale={colorScale}/>
       
