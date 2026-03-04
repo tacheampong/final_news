@@ -1,7 +1,7 @@
 import * as d3 from 'd3'
 import BarChart from './BarChart'
 
-const ArticlesBarChart = ({ data }) => {
+const ArticlesBarChart = ({ data, selectedTopic, setSelectedTopic }) => {
     var margin = {top:20, left:80, bottom:70, right:20};
     var width = 500 - margin.left - margin.right;
     var height = 500 - margin.top - margin.bottom;
@@ -34,7 +34,7 @@ const ArticlesBarChart = ({ data }) => {
     return (
         <div>
             <h2>Global News Count by Topic</h2>
-            <BarChart aggregated={aggregated} width={width} height={height} margin={margin} xscale={xscale} yscale={yscale} colorscale={colorscale}/>
+            <BarChart aggregated={aggregated} width={width} height={height} margin={margin} xscale={xscale} yscale={yscale} colorscale={colorscale} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic}/>
         </div>
     );
 }

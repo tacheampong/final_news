@@ -1,6 +1,6 @@
 import * as d3 from 'd3'
 
-const LineChart = ({aggregated, width, height, margin, line, xscale, yscale, colorscale}) => {
+const LineChart = ({aggregated, width, height, margin, line, xscale, yscale, colorscale, selectedTopic, setSelectedTopic}) => {
 
     return (
         <svg
@@ -29,6 +29,10 @@ const LineChart = ({aggregated, width, height, margin, line, xscale, yscale, col
             strokeWidth={1.5}
             stroke={colorscale(item.topic)}
             d={line(item.values)}
+
+            opacity={selectedTopic && selectedTopic !== item.topic ? 0.1 : 1}
+            onClick={() => setSelectedTopic(item.topic)}
+            style={{cursor: "pointer"}}
           />
         ))}
         {/* Drawing X-axis labels format to NOV 4 */}

@@ -1,6 +1,6 @@
 import * as d3 from 'd3'
 
-const BarChart = ({aggregated, width, height, margin, xscale, yscale, colorscale}) => {
+const BarChart = ({aggregated, width, height, margin, xscale, yscale, colorscale, selectedTopic, setSelectedTopic}) => {
 
     return (
         <svg
@@ -31,6 +31,10 @@ const BarChart = ({aggregated, width, height, margin, xscale, yscale, colorscale
                   width={xscale.bandwidth()}
                   height={height - yscale(value)}
                   fill={colorscale(item.topic)}
+
+                  opacity={selectedTopic && selectedTopic !== item.topic ? 0.2 : 1}
+                  onClick={() => setSelectedTopic(item.topic)}
+                  style={{cursor: "pointer"}}
                 />
               );
             })}

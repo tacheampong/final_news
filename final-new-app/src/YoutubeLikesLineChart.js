@@ -1,7 +1,7 @@
 import * as d3 from 'd3'
 import LineChart from './LineChart'
 import Legend from './Legend';
-const YoutubeLikesLineChart = ({data}) => {
+const YoutubeLikesLineChart = ({data, selectedTopic, setSelectedTopic}) => {
   var margin = { top: 20, left: 80, bottom: 70, right: 20 };
    var width = 500 - margin.left - margin.right;
    var height = 500 - margin.top - margin.bottom;
@@ -45,7 +45,7 @@ const YoutubeLikesLineChart = ({data}) => {
    <div>
      <h4>Youtube Average Like Count by Topic Over Time</h4>
     <div>
-    <LineChart aggregated={aggregated} width={width} height={height} margin={margin} line={line} xscale={x} yscale={y} colorscale={colorScale}/>
+    <LineChart aggregated={aggregated} width={width} height={height} margin={margin} line={line} xscale={x} yscale={y} colorscale={colorScale} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic}/>
       
     </div>
    

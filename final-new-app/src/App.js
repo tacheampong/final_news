@@ -64,13 +64,14 @@ async function getYoutubeDataBar() {
 
   return cleaned;
 }
-var titles = [{topic:"war/conflict"}, {topic:"election"}, {topic: "immigration"}]
+var titles = [{topic:"conflict/war"}, {topic:"election"}, {topic: "immigration"}]
 function App() {
   const [articleDataset, setArticleDatset] = useState([])
   const [youtubeDataset, setYoutubeDataset] = useState([])
   const [articleBarDataset, setArticleBarDataset] = useState([])
   const [youtubeBarDataset, setYoutubeBarDataset] = useState([])
   const [legendData, setLegendData] = useState([])
+  const [selectedTopic, setSelectedTopic] = useState(null)
   useEffect(() => {
     async function loadData() {
       const articleData = await getArticleData()
@@ -89,20 +90,21 @@ function App() {
   return (
     <div className="App">
       <h1>News Coverage</h1>
+      <button onClick={() => setSelectedTopic(null)}>Reset Selection</button>
       <div className="charts-alignment">
      <Legend aggregated={legendData}/>
       </div>
       <div className="charts-alignment">
-        <ArticlesBarChart data={articleBarDataset}/>
-        <YoutubeBarChart data={youtubeBarDataset}/>
+        <ArticlesBarChart data={articleBarDataset} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic}/>
+        <YoutubeBarChart data={youtubeBarDataset} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic}/>
       </div>
       <div className='charts-alignment'>
         <div className='line-chart-alignment'>
         <h2>Line Charts</h2>
-        <ArticlesLineChart data={articleDataset}/>
-        <YotubeCommentsLineChart data={youtubeDataset}/>
-        <YoutubeLikesLineChart data={youtubeDataset}/>
-        <YoutubeViewsLineChart data={youtubeDataset}/>
+        <ArticlesLineChart data={articleDataset} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic}/>
+        <YotubeCommentsLineChart data={youtubeDataset} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic}/>
+        <YoutubeLikesLineChart data={youtubeDataset} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic}/>
+        <YoutubeViewsLineChart data={youtubeDataset} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic}/>
         </div>
 
 
