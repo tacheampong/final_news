@@ -132,7 +132,11 @@ function App() {
                 <YoutubeLikesLineChart data={youtubeDataset} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic}/>
             </div>
             <p className="line-charts-text">
-                blah blah blah
+                These line charts vizualize the counts for a particular form of media (Articles & Youtube) over the election period. For the articles we can see that elections have a significant amount worldwide compared to immigration and war. 
+                For article's there's a clear distinction between all topics. When we're comparing views, likes, and comments for Youtube
+                we can see some variation within and between the visuals.
+                Notable points to analyze is the change from Nov 4 to election day (Nov 5) and the change from election day to after the election day.
+        
             </p>
             <h2>Scatter Plots</h2>
             <div className="charts-alignment">
