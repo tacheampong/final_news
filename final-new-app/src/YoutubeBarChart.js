@@ -33,7 +33,7 @@ const YoutubeBarChart = ({ data, selectedTopic, setSelectedTopic }) => {
 
     return (
         <div>
-            <h2>YouTube Video Count by Topic</h2>
+            <h4>YouTube Video Count by Topic</h4>
             <BarChart aggregated={aggregated} width={width} height={height} margin={margin} xscale={xscale} yscale={yscale} colorscale={colorscale} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic}/>
         </div>
     );
