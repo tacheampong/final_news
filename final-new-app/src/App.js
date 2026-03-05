@@ -94,6 +94,9 @@ function App() {
         <span style={{color:"#FF0000"}}>What People Watch</span>
       </h1>
       <h3 className="sub-title">Comparing global news coverage with YouTube engagement</h3>
+      <p className="intro-text">
+        These visualizations compare global news coverage with YouTube engagement across several political topics. The data reflects activity during the 2024 U.S. Presidential Election period, when political news coverage and online discussion were especially high. Users can click on a topic in any chart to filter the visualizations and explore patterns across datasets. The Reset Selection button clears the filter and returns the charts to their original view.
+      </p>
       <div className="legend-container">
      <Legend aggregated={legendData}/>
       </div>
@@ -103,6 +106,9 @@ function App() {
         <ArticlesBarChart data={articleBarDataset} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic}/>
         <YoutubeBarChart data={youtubeBarDataset} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic}/>
       </div>
+      <p className="bar-charts-text">
+        The bar charts show that elections receive the most attention in both global news coverage and YouTube content during the election period. Global news coverage is especially concentrated on elections compared to other topics. While elections are also the most common topic on YouTube, the distribution of videos across topics is somewhat more balanced than in institutional news coverage. 
+      </p>
       <h2>Line Charts</h2>
       <div className='charts-alignment'>
         <ArticlesLineChart data={articleDataset} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic}/>
@@ -110,6 +116,16 @@ function App() {
         <YoutubeCommentsLineChart data={youtubeDataset} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic}/>
         <YoutubeLikesLineChart data={youtubeDataset} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic}/>
         </div>
+        <p className="line-charts-text">
+        blah blah blah 
+        </p>
+        <h2>Scatter Plots</h2>
+        <p className="scatter-plots-text">
+        blah blah blah 
+        </p>
+        <p className="disclaimer-text">
+        *Disclaimer: The data used in this project is sourced from the GDELT Project and YouTube API, which may have inherent biases and limitations. The visualizations are intended to provide insights into trends and patterns but should not be interpreted as definitive representations of global news coverage or YouTube engagement. Users are encouraged to consider the context and potential biases when interpreting the data.
+        </p>
     </div>
   );
 }

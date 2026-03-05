@@ -11,7 +11,7 @@
 }
 
 .legend-container {
-  margin-top: 60px;
+  margin-top: 40px;
   margin-bottom: 10px;
 }
 
@@ -38,5 +38,51 @@
 }
 
 .sub-title {
-  color: #555;
+  color: #333;
+}
+
+.intro-text {
+  max-width: 900px;
+  margin: 10px auto 30px auto;
+  line-height: 1.6;
+  font-size: 15px;
+  color: #444;
+  text-align: center;
+}
+
+.disclaimer-text {
+  max-width: 900px;
+  margin: 100px auto 30px auto;
+  font-size: 10px;
+  color: black;
+  line-height: 1.5;
+  text-align: center;
+  font-weight: bold;
+}
+
+.bar-charts-text {
+  max-width: 900px;
+  margin: 5px auto 60px auto;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #444;
+  text-align: center;
+}
+
+.line-charts-text {
+  max-width: 900px;
+  margin: 5px auto 60px auto;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #444;
+  text-align: center;
+}
+
+.scatter-plots-text {
+  max-width: 900px;
+  margin: 5px auto 60px auto;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #444;
+  text-align: center;
 }
