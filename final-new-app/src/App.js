@@ -97,6 +97,14 @@ function App() {
       <p className="intro-text">
         These visualizations compare global news coverage with YouTube engagement across several political topics. The data reflects activity during the 2024 U.S. Presidential Election period, when political news coverage and online discussion were especially high. Users can click on a topic in any chart to filter the visualizations and explore patterns across datasets. The Reset Selection button clears the filter and returns the charts to their original view.
       </p>
+      <img
+        src="/website_image.png"
+        alt="Website Image"
+        className="website-image"
+      />
+      <p className="image-citation">
+        Image source: Rutgers University (How media can shape an election).
+      </p>
       <div className="legend-container">
      <Legend aggregated={legendData}/>
       </div>
