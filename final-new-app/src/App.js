@@ -105,6 +105,11 @@ function App() {
       <p className="image-citation">
         Image source: Rutgers University (How media can shape an election).
       </p>
+      <p className="authors-names">
+        BY THERESA ACHEAMPONG, SHEVLIN JAFFE, AND SHANIYA KHATUA
+      </p>
+      <p className="publish-date">Updated on March 5, 2026 
+      </p>
       <div className="legend-container">
      <Legend aggregated={legendData}/>
       </div>
