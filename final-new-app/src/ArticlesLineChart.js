@@ -36,7 +36,7 @@ const ArticlesLineChart = ({data, selectedTopic, setSelectedTopic}) => {
     .y((d) => y(d.num_articles));
      var colorScale = d3.scaleOrdinal()
             .domain(data.map(d => d.topic))
-            .range(["#FFA500","#008000", "#8F3DD1" ])
+            .range(["#C0392B","#1F3A5F", "#16A085" ])
 
   var y = d3.scaleLinear().domain([0, yMax]).range([height, 0]);
 

@@ -4,7 +4,7 @@ const Legend = ({aggregated}) => {
 
     var colorScale = d3.scaleOrdinal()
           .domain(aggregated.map(d => d.topic))
-          .range(["#FFA500","#008000", "#8F3DD1" ])
+          .range(["#C0392B","#1F3A5F", "#16A085" ])
     return (
  
   <svg width={300} height={50}>
