@@ -27,7 +27,7 @@ const ChannelsScatterplot = ({ selectedTopic }) => {
             const y = d3.scaleLinear().domain([0, d3.max(data, d => d.video_count)]).nice().range([height, 0]);
 
             // Category10 provides a distinct Red/Blue contrast
-            const color = d3.scaleOrdinal(d3.schemeReds[5]);
+            const color = "#FF0000";
 
             svg.append("g").attr("transform", `translate(0,${height})`).call(d3.axisBottom(x));
             svg.append("g").call(d3.axisLeft(y));
@@ -39,7 +39,7 @@ const ChannelsScatterplot = ({ selectedTopic }) => {
                 .attr("cx", d => x(d.election_count))
                 .attr("cy", d => y(d.video_count))
                 .attr("r", 10)
-                .style("fill", d => color(d.channel))
+                .style("fill", color)
                 .style("opacity", 0.8);
 
             svg.append("text")

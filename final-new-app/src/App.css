@@ -12,6 +12,8 @@
 
 .legend-container {
     margin-top: 70px;
+    justify-content: center;
+    display: flex;
 }
 
 .reset-button {
@@ -145,4 +147,11 @@
     r: 12px; /* Makes dots grow slightly when you hover */
     stroke: #333;
     stroke-width: 2px;
+}
+
+.legend2-container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    justify-content: center;
+    display: flex;
 }

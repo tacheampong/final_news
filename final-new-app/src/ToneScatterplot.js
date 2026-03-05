@@ -27,7 +27,7 @@ const ToneScatterplot = ({ selectedTopic }) => {
             const y = d3.scaleLinear().domain([0, d3.max(data, d => d.num_articles)]).nice().range([height, 0]);
 
             // Updated to match your blue/red theme (Tableau10 contains both)
-            const color = d3.scaleOrdinal(d3.schemeBlues[5]);
+            const color = "#2C6CB0";
 
             svg.append("g").attr("transform", `translate(0,${height})`).call(d3.axisBottom(x));
             svg.append("g").call(d3.axisLeft(y).tickFormat(d3.format(".2s")));
@@ -39,7 +39,7 @@ const ToneScatterplot = ({ selectedTopic }) => {
                 .attr("cx", d => x(d.avg_tone))
                 .attr("cy", d => y(d.num_articles))
                 .attr("r", 8)
-                .style("fill", d => color(d.topic))
+                .style("fill", color)
                 .style("opacity", 0.7);
 
             svg.append("text")

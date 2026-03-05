@@ -11,6 +11,7 @@ import YoutubeBarChart from "./YoutubeBarChart";
 import Legend from './Legend';
 import ToneScatterplot from "./ToneScatterplot";
 import ChannelsScatterplot from "./ChannelsScatterplot";
+import Legend2 from './Legend2';
 async function getArticleData() {
     var data = await d3.csv("institutional_news.csv");
     var change_date = data.flatMap((d) => [
@@ -139,6 +140,9 @@ function App() {
         
             </p>
             <h2>Scatter Plots</h2>
+            <div className="legend2-container">
+            <Legend2 />
+            </div>
             <div className="charts-alignment">
                 <ToneScatterplot selectedTopic={selectedTopic} />
                 <ChannelsScatterplot selectedTopic={selectedTopic} />
