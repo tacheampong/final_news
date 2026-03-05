@@ -42,7 +42,7 @@ const ArticlesLineChart = ({data, selectedTopic, setSelectedTopic}) => {
 
   return (
     <div>
-    <h4>Global News Count by Topic Over Time</h4>
+    <h4 className="gdelt-heading">Global News Count by Topic Over Time</h4>
     <LineChart aggregated={aggregated} width={width} height={height} margin={margin} line={line} xscale={x} yscale={y} colorscale={colorScale} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic}/>
     </div>
 

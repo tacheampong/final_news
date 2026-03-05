@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 import LineChart from './LineChart';
 import Legend from './Legend';
-const YotubeCommentsLineChart = ({data, selectedTopic, setSelectedTopic}) => {
+const YoutubeCommentsLineChart = ({data, selectedTopic, setSelectedTopic}) => {
     var margin = { top: 20, left: 80, bottom: 70, right: 20 };
    var width = 500 - margin.left - margin.right;
    var height = 500 - margin.top - margin.bottom;
@@ -43,7 +43,7 @@ const YotubeCommentsLineChart = ({data, selectedTopic, setSelectedTopic}) => {
  
    return (
    <div>
-    <h4>Youtube Average Comment Count by Topic Over Time</h4>
+    <h4 className="youtube-heading">Youtube Average Comment Count by Topic Over Time</h4>
     <div>
     <LineChart aggregated={aggregated} width={width} height={height} margin={margin} line={line} xscale={x} yscale={y} colorscale={colorScale} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic}/>
       
@@ -52,6 +52,6 @@ const YotubeCommentsLineChart = ({data, selectedTopic, setSelectedTopic}) => {
     </div>
    );
 }
-export default YotubeCommentsLineChart;
+export default YoutubeCommentsLineChart;
 
   

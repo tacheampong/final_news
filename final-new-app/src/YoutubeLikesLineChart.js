@@ -43,7 +43,7 @@ const YoutubeLikesLineChart = ({data, selectedTopic, setSelectedTopic}) => {
  
    return (
    <div>
-     <h4>Youtube Average Like Count by Topic Over Time</h4>
+     <h4 className="youtube-heading">Youtube Average Like Count by Topic Over Time</h4>
     <div>
     <LineChart aggregated={aggregated} width={width} height={height} margin={margin} line={line} xscale={x} yscale={y} colorscale={colorScale} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic}/>
       

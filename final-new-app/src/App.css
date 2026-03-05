@@ -18,3 +18,15 @@
 button {
   margin-bottom: 20px;
 }
+
+.gdelt-heading {
+  color: #2C6CB0;
+}
+
+.youtube-heading {
+  color: #FF0000;
+}
+
+.sub-title {
+  color: #555;
+}

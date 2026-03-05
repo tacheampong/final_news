@@ -33,7 +33,7 @@ const ArticlesBarChart = ({ data, selectedTopic, setSelectedTopic }) => {
     
     return (
         <div>
-            <h4>Global News Count by Topic</h4>
+            <h4 className="gdelt-heading">Global News Count by Topic</h4>
             <BarChart aggregated={aggregated} width={width} height={height} margin={margin} xscale={xscale} yscale={yscale} colorscale={colorscale} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic}/>
         </div>
     );

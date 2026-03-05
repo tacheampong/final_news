@@ -89,8 +89,11 @@ function App() {
   if (articleDataset.length === 0 || youtubeDataset.length === 0 || articleBarDataset.length === 0 || youtubeBarDataset.length === 0) return <div>Loading...</div>
   return (
     <div className="App">
-      <h1>What the News Covers vs. What People Watch</h1>
-      <h3> Comparing global news coverage with YouTube engagement</h3>
+      <h1>
+        <span style={{color: "#2C6CB0"}}>What the News Covers</span>{" "}vs.{" "} 
+        <span style={{color:"#FF0000"}}>What People Watch</span>
+      </h1>
+      <h3 className="sub-title">Comparing global news coverage with YouTube engagement</h3>
       <div className="legend-container">
      <Legend aggregated={legendData}/>
       </div>
