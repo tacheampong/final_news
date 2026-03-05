@@ -6,9 +6,10 @@ const ToneScatterplot = ({ selectedTopic }) => {
 
     useEffect(() => {
         d3.select(chartRef.current).selectAll("*").remove();
-        const margin = {top: 30, right: 160, bottom: 60, left: 80},
-            width = 450 - margin.left - margin.right,
-            height = 400 - margin.top - margin.bottom;
+
+        const margin = {top: 40, right: 60, bottom: 60, left: 80},
+            width = 500 - margin.left - margin.right,
+            height = 450 - margin.top - margin.bottom;
 
         const svg = d3.select(chartRef.current)
             .append("svg")
@@ -26,30 +27,67 @@ const ToneScatterplot = ({ selectedTopic }) => {
             const x = d3.scaleLinear().domain(d3.extent(data, d => d.avg_tone)).nice().range([0, width]);
             const y = d3.scaleLinear().domain([0, d3.max(data, d => d.num_articles)]).nice().range([height, 0]);
 
-            // Updated to match your blue/red theme (Tableau10 contains both)
+            const rScale = d3.scaleSqrt()
+                .domain([0, d3.max(data, d => d.num_articles)])
+                .range([4, 10]);
+
             const color = "#2C6CB0";
 
+            // Light Grey Grid Lines
+            svg.append("g")
+                .attr("class", "grid")
+                .call(d3.axisLeft(y).tickSize(-width).tickFormat(""));
+            svg.append("g")
+                .attr("class", "grid")
+                .attr("transform", `translate(0,${height})`)
+                .call(d3.axisBottom(x).tickSize(-height).tickFormat(""));
+
+            // Axes
             svg.append("g").attr("transform", `translate(0,${height})`).call(d3.axisBottom(x));
             svg.append("g").call(d3.axisLeft(y).tickFormat(d3.format(".2s")));
 
+            // Axis Labels
+            svg.append("text")
+                .attr("text-anchor", "middle")
+                .attr("x", width / 2)
+                .attr("y", height + margin.bottom - 15)
+                .style("font-size", "14px")
+                .text("Average Tone");
+
+            svg.append("text")
+                .attr("text-anchor", "middle")
+                .attr("transform", "rotate(-90)")
+                .attr("y", -margin.left + 25)
+                .attr("x", -height / 2)
+                .style("font-size", "14px")
+                .text("Number of Articles");
+
+            // Dots
             svg.selectAll(".dot")
                 .data(data.filter(d => !selectedTopic || d.topic === selectedTopic))
                 .enter()
                 .append("circle")
                 .attr("cx", d => x(d.avg_tone))
                 .attr("cy", d => y(d.num_articles))
-                .attr("r", 8)
+                .attr("r", d => rScale(d.num_articles))
                 .style("fill", color)
                 .style("opacity", 0.7);
 
             svg.append("text")
-                .attr("x", width/2).attr("y", -10)
-                .style("text-anchor", "middle").style("font-weight", "bold")
+                .attr("x", width / 2).attr("y", -margin.top / 2)
+                .style("text-anchor", "middle").style("font-weight", "bold").style("font-size", "16px")
                 .text("News: Volume vs Tone");
         });
     }, [selectedTopic]);
 
-    return <div ref={chartRef}></div>;
+    return (
+        <div ref={chartRef}>
+            <style>
+                {`.grid line { stroke: #e0e0e0; stroke-opacity: 0.6; shape-rendering: crispEdges; }
+                  .grid path { stroke-width: 0; }`}
+            </style>
+        </div>
+    );
 };
 
 export default ToneScatterplot;
