@@ -97,7 +97,7 @@ function App() {
       <div className="legend-container">
      <Legend aggregated={legendData}/>
       </div>
-      <button onClick={() => setSelectedTopic(null)}>Reset Selection</button>
+      <button className="reset-button" onClick={() => setSelectedTopic(null)}>Reset Selection</button>
       <h2>Bar Charts</h2>
       <div className="charts-alignment">
         <ArticlesBarChart data={articleBarDataset} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic}/>

@@ -15,8 +15,18 @@
   margin-bottom: 10px;
 }
 
-button {
+.reset-button {
   margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.reset-button:hover {
+  transform: translateY(-1px);;
 }
 
 .gdelt-heading {
