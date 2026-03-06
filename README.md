@@ -3,7 +3,7 @@ https://tacheampong.github.io/final_news/
 ### Screencast Video: ###
 https://youtu.be/dPvK6xctLDI
 ### Process Book: ### 
-https://docs.google.com/document/d/1TGoPnhZVT5R854Zk8ekFcbQVbyGB7-vf6c5nCCJL2s8/edit?usp=sharing
+[View PDF of Process Book](TSSProcessBook.pdf)
 
 ### Overview: ###
 This data visualization site walks through global news coverage and YouTube engagement for three topic areas: conflict/war, election, and immigration. Given that these are widely discussed topics during election season, it would be interesting to see how much coverage and YouTube engagement occur over Nov 4 - Nov 6. Users can explore how new coverage and engagement changes over time and which topic areas have the largest counts across all dates.
