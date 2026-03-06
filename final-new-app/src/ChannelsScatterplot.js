@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
-
+import youtube_channels from "../data/youtube_channels.csv"
 const ChannelsScatterplot = ({ selectedTopic }) => {
     const chartRef = useRef();
 
@@ -18,7 +18,7 @@ const ChannelsScatterplot = ({ selectedTopic }) => {
             .append("g")
             .attr("transform", `translate(${margin.left},${margin.top})`);
 
-        d3.csv("/youtube_channels.csv").then(data => {
+        d3.csv(youtube_channels).then(data => {
             data.forEach(d => {
                 d.video_count = +d.video_count;
                 d.election_count = +d.election_count;
