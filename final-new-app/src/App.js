@@ -13,7 +13,7 @@ import ToneScatterplot from "./ToneScatterplot";
 import ChannelsScatterplot from "./ChannelsScatterplot";
 import Legend2 from './Legend2';
 async function getArticleData() {
-    var data = await d3.csv("institutional_news.csv");
+    var data = await d3.csv("../data/institutional_news.csv");
     var change_date = data.flatMap((d) => [
         {
             date: new Date("2024-" + d.date.slice(0, 2) + "-" + d.date.charAt(3)),
@@ -28,7 +28,7 @@ async function getArticleData() {
     return change_date;
 }
 async function getYoutubeData() {
-    var data = await d3.csv("youtube_topics_summary.csv");
+    var data = await d3.csv("../data/youtube_topics_summary.csv");
     var change_date = data.flatMap((d) => [
         {
             date: new Date("2024-" + d.date.slice(0, 2) + "-" + d.date.charAt(3)),
@@ -46,7 +46,7 @@ async function getYoutubeData() {
     return change_date;
 }
 async function getArticleDataBar() {
-    var data = await d3.csv("institutional_news.csv");
+    var data = await d3.csv("../data/institutional_news.csv");
     var cleaned = data.map(function(d){
         return{
             topic: d.topic,
@@ -57,7 +57,7 @@ async function getArticleDataBar() {
     return cleaned;
 }
 async function getYoutubeDataBar() {
-    var data = await d3.csv("youtube_topics_summary.csv");
+    var data = await d3.csv("../data/youtube_topics_summary.csv");
     var cleaned = data.map(function(d){
         return{
             topic: d.topic,
@@ -101,7 +101,7 @@ function App() {
                 These visualizations compare global news coverage with YouTube engagement across several political topics. The data reflects activity during the 2024 U.S. Presidential Election period, when political news coverage and online discussion were especially high. Users can click on a topic in any chart to filter the visualizations and explore patterns across datasets. The Reset Selection button clears the filter and returns the charts to their original view.
             </p>
             <img
-                src="/website_image.png"
+                src="../data/website_image.png"
                 alt="Website Image"
                 className="website-image"
             />
