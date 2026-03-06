@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
-
+import institutional_news from "/data/institutional_news.csv"
 const ToneScatterplot = ({ selectedTopic }) => {
     const chartRef = useRef();
 

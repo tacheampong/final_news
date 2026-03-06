@@ -12,9 +12,9 @@ import Legend from './Legend';
 import ToneScatterplot from "./ToneScatterplot";
 import ChannelsScatterplot from "./ChannelsScatterplot";
 import Legend2 from './Legend2';
-import institutional_news from "../data/institutional_news.csv"
-import youtube_topic_summary from "../data/youtube_topics_summary.csv"
-import website_image from "../data/website_image.png"
+import institutional_news from "/data/institutional_news.csv"
+import youtube_topic_summary from "/data/youtube_topics_summary.csv"
+import website_image from "/data/website_image.png"
 async function getArticleData() {
     var data = await d3.csv(institutional_news);
     var change_date = data.flatMap((d) => [
