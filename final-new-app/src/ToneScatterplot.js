@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
-import institutional_news from "/data/institutional_news.csv"
+import institutional_news from "./data/institutional_news.csv"
 const ToneScatterplot = ({ selectedTopic }) => {
     const chartRef = useRef();
 
@@ -18,7 +18,7 @@ const ToneScatterplot = ({ selectedTopic }) => {
             .append("g")
             .attr("transform", `translate(${margin.left},${margin.top})`);
 
-        d3.csv("/institutional_news.csv").then(data => {
+        d3.csv(institutional_news).then(data => {
             data.forEach(d => {
                 d.num_articles = +d.num_articles;
                 d.avg_tone = +d.avg_tone;

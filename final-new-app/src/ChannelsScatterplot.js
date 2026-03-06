@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
-import youtube_channels from "/data/youtube_channels.csv"
+import youtube_channels from "./data/youtube_channels.csv"
 const ChannelsScatterplot = ({ selectedTopic }) => {
     const chartRef = useRef();
 
