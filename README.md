@@ -3,6 +3,7 @@ https://tacheampong.github.io/final_news/
 ### Screencast Video: ###
 https://youtu.be/dPvK6xctLDI
 ### Process Book: ### 
+[View PDF of Process Book](Process Book.pdf)
 https://docs.google.com/document/d/1TGoPnhZVT5R854Zk8ekFcbQVbyGB7-vf6c5nCCJL2s8/edit?usp=sharing
 
 ### Overview: ###
